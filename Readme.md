@@ -23,16 +23,16 @@ from AristaEOL import AristaEOL
 access_token = "YOUR_ACCESS_TOKEN"
 
 # Create an AristaEOL object
-arista_eol = AristaEOL(access_token)
+clnt = AristaEOL(access_token)
 
 # Check hardware EOL status for a specific SKU
 sku = "DCS-7150S-52-CL-F"
-hardware_eol_info = arista_eol.hardware_check(sku)
+hardware_eol_info = clnt.hardware_check(sku)
 print(hardware_eol_info)
 
 # Check software EOL status for a release train
 release_train = "4.23"
-software_eol_info = arista_eol.software_check(release_train)
+software_eol_info = clnt.software_check(release_train)
 print(software_eol_info)
 ```
 

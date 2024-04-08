@@ -72,8 +72,7 @@ class AristaEOL():
             sys.exit(1)
 
         log.info("Successfully authenticated")
-        raw_resp = r.text
-        resp = json.loads(raw_resp)
+        resp = json.loads( r.text)
         self.cookie = resp['data']['session_code']
 
     def hardware_check(self, sku: str) -> dict:
@@ -106,9 +105,7 @@ class AristaEOL():
             log.error("Error accessing API endpoint: %s", err)
             sys.exit(1)
 
-        raw_resp = r.text
-        resp = json.loads(raw_resp)
-
+        resp = json.loads(r.text)
         return resp['data']
 
     def software_check(self, releaseTrain: str) -> None:
@@ -138,7 +135,5 @@ class AristaEOL():
             log.error("Error accessing API endpoint: %s", err)
             sys.exit(1)
 
-        raw_resp = r.text
-        resp = json.loads(raw_resp)
-
+        resp = json.loads(r.text)
         return resp['data']

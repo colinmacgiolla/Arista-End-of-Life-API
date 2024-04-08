@@ -72,7 +72,7 @@ class AristaEOL():
             sys.exit(1)
 
         log.info("Successfully authenticated")
-        resp = json.loads( r.text)
+        resp = json.loads(r.text)
         self.cookie = resp['data']['session_code']
 
     def hardware_check(self, sku: str) -> dict:

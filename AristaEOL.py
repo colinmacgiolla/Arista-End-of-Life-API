@@ -103,7 +103,7 @@ class AristaEOL():
             log.error("HTTP Error occurred: %s", http_err)
             sys.exit(1)
         except Exception as err:
-            log.error("Error downloading Alertbase: %s", err)
+            log.error("Error accessing API endpoint: %s", err)
             sys.exit(1)
 
         raw_resp = r.text
@@ -135,7 +135,7 @@ class AristaEOL():
             log.error("HTTP Error occurred: %s", http_err)
             sys.exit(1)
         except Exception as err:
-            log.error("Error downloading Alertbase: %s", err)
+            log.error("Error accessing API endpoint: %s", err)
             sys.exit(1)
 
         raw_resp = r.text

@@ -59,6 +59,7 @@ class AristaEOL():
         url = 'https://www.arista.com/api/sessionCode/'
         headers = {}
         headers['content-type'] = 'application/json'
+        headers['user-agent'] = 'curl'
         data = {}
         data['accessToken'] = self.encoded_token.decode("utf-8")
         try:
@@ -91,10 +92,10 @@ class AristaEOL():
         url = 'https://www.arista.com/api/eox/hwLifecycle/'
         headers = {}
         headers['content-type'] = 'application/json'
+        headers['user-agent'] = 'curl'
         data = {}
         data['sessionCode'] = self.cookie
         data['mainSku'] = sku
-
         try:
             r = requests.post(url, json=data, headers=headers)
             r.raise_for_status()
@@ -121,6 +122,7 @@ class AristaEOL():
         url = 'https://www.arista.com/api/eox/swLifecycle/'
         headers = {}
         headers['content-type'] = 'application/json'
+        headers['user-agent'] = 'curl'
         data = {}
         data['sessionCode'] = self.cookie
         data['releaseTrain'] = releaseTrain
